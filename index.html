@@ -147,7 +147,7 @@
       <h2 class="text-center mb-5">Contáctanos</h2>
       <div class="row">
         <div class="col-md-6 offset-md-3">
-          <form action="send_email.php" method="POST">
+          <form action="https://formsubmit.co/sikya.contacto@gmail.com" method="POST">
             <div class="mb-3">
               <label for="name" class="form-label">Nombre</label>
               <input type="text" class="form-control" id="name" required>
@@ -162,17 +162,7 @@
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
           </form>
-          <!-- Mensaje de confirmación -->
-          <?php if (isset($_GET['success'])): ?>
-            <div class="alert alert-success mt-3">
-              ¡Tu mensaje ha sido enviado exitosamente!
-            </div>
-          <?php elseif (isset($_GET['error'])): ?>
-            <div class="alert alert-danger mt-3">
-              Ocurrió un error al enviar el mensaje. Inténtalo de nuevo.
-            </div>
-          <?php endif; ?>
-        </div>
+          </div>
       </div>
     </div>
   </section>
