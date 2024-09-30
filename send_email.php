@@ -20,9 +20,21 @@
     
     // Enviar el correo
     if (mail($to, $subject, $body, $headers)) {
-      echo "¡Mensaje enviado correctamente!";
+            // Redirigir con éxito
+            header("Location: index.php?success=true");
+            exit;
+        } else {
+            // Redirigir con error
+            header("Location: index.php?error=true");
+            exit;
+        } else {
+        // Redirigir con error si la validación falla
+        header("Location: index.php?error=true");
+        exit;
     } else {
-      echo "Lo sentimos, ha ocurrido un error al enviar tu mensaje.";
+    // Si no es POST, redirigir al inicio
+    header("Location: index.php");
+    exit;
     }
   }
 ?>

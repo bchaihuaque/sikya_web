@@ -37,7 +37,7 @@
 </head>
 <body>
   <!-- Barra de navegación -->
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <nav class="navbar fixed-top navbar-expand-lg navbar-light " style="background-color: #e3f2fd;">
     <div class="container">
       <a class="navbar-brand" href="#">Sikya Consultores</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -135,7 +135,7 @@
           <p>Somos una empresa compuesta por un grupo de profesionales de probada capacidad y sólida formación académica. Contamos con basta experiencia en nuestro campo de asesoria y consultoría. Nuestro enfoque está en brindar soluciones efectivas y personalizadas que ayuden a nuestros clientes a alcanzar sus objetivos.</p>
         </div>
         <div class="col-lg-6">
-          <img src="/images/pexels-kaboompics-6229.jpg" alt="Sobre nosotros" class="img-fluid">
+          <img src="./images/pexels-kaboompics-6229.jpg" alt="Sobre nosotros" class="img-fluid">
         </div>
       </div>
     </div>
@@ -147,7 +147,7 @@
       <h2 class="text-center mb-5">Contáctanos</h2>
       <div class="row">
         <div class="col-md-6 offset-md-3">
-          <form>
+          <form action="send_email.php" method="POST">
             <div class="mb-3">
               <label for="name" class="form-label">Nombre</label>
               <input type="text" class="form-control" id="name" required>
@@ -162,6 +162,16 @@
             </div>
             <button type="submit" class="btn btn-primary">Enviar</button>
           </form>
+          <!-- Mensaje de confirmación -->
+          <?php if (isset($_GET['success'])): ?>
+            <div class="alert alert-success mt-3">
+              ¡Tu mensaje ha sido enviado exitosamente!
+            </div>
+          <?php elseif (isset($_GET['error'])): ?>
+            <div class="alert alert-danger mt-3">
+              Ocurrió un error al enviar el mensaje. Inténtalo de nuevo.
+            </div>
+          <?php endif; ?>
         </div>
       </div>
     </div>
